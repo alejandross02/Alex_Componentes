@@ -2,7 +2,7 @@
     session_start();
     include "conexion.php";
 
-// Esto lo implemente por tema de seguridad para que poniendo esto en el navegador localhost/ALEX-COMPONENTES/cliente_panel.php NO se pueda acceder y requiera logearte.
+// Esto lo implemente por tema de seguridad para que poniendo esto en el navegador localhost/ALEX-COMPONENTES/admin_panel.php NO se pueda acceder y requiera logearte.
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
 }
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_stock'])) {
         // Diferencia entre el stock nuevo y el anterior
         $cantidadCambio = $nuevoStock - $stockAnterior;
 
-        // 2) Actualizamos el stock en la tabla productos
+        // Actualizamos el stock en la tabla productos
         $stmt = $conexion->prepare("UPDATE productos SET stock = ? WHERE id_producto = ?");
         if ($stmt) {
             $stmt->bind_param("ii", $nuevoStock, $idProducto);

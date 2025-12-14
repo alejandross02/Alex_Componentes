@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['añadir_carrito'])) {
     // Recoger ID del producto enviado desde el formulario
     $idProducto = (int)$_POST['id_producto'];
 
-    // Cantidad seleccionada por el usuario
+    // Cantidad seleccionada por el cliente
     $cantidadSeleccionada = (int)$_POST['cantidad'];
 
     // Evitar cantidades menores de 1
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['añadir_carrito'])) {
                 <li class="nav-item"><a class="nav-link" href="productos.php">Productos</a></li>
 
                 <?php 
-                // Si el usuario es cliente, mostrar botones especiales
+                // Si el usuario es cliente
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'cliente'): ?>
                     <li class="nav-item"><a class="nav-link" href="cliente_panel.php">Página principal</a></li>
                     <li class="nav-item"><a class="nav-link" href="carrito.php">Carrito</a></li>
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['añadir_carrito'])) {
                             </form>
 
                         <?php } else { ?>
-                            <!-- Botón desactivado si no hay stock -->
+                            <!-- Boton desactivado si no hay stock -->
                             <button class="btn btn-secondary btn-sm" disabled>Sin stock</button>
                         <?php } ?>
 

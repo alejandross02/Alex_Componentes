@@ -62,6 +62,10 @@ $cliente_nombre = $_SESSION['user_name'];
                     <a class="nav-link" href="carrito.php">Carrito</a>
                 </li>
 
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="pedidos.php">Pedidos</a>
+                </li>
+
                 <li class="nav-item nav-link me-3">
                     Bienvenido, <strong><?php echo $_SESSION['user_name']; ?></strong>
                 </li>
